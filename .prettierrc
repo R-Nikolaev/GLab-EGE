@@ -1,0 +1,24 @@
+{
+	"tabWidth": 4,
+	"overrides": [
+		{
+			"files": [
+				".ts",
+				".js"
+			],
+			"options": {
+				"trailingComma": "es5",
+				"semi": true,
+				"singleQuote": true
+			}
+		},
+		{
+			"files": [
+				".scss"
+			],
+			"options": {
+				"singleQuote": false
+			}
+		}
+	]
+}

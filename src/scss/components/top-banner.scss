@@ -1,0 +1,104 @@
+.top-banner {
+	position: relative;
+
+	display: flex;
+
+	height: 126px;
+
+	background-color: var(--primary-03);
+
+	@include media-mx(991) {
+		height: 52px;
+	}
+
+	.banner-bg {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0;
+		z-index: 1;
+
+		width: 100%;
+		max-width: 1920px;
+		height: 100%;
+
+		background: url("../../images/top-banner.png");
+		background-position: center!important;
+		background-size: cover!important;
+		background-repeat: no-repeat!important;
+	}
+
+	.top-banner-content {
+		position: relative;
+		z-index: 50;
+
+		width: 100%;
+		height: 100%;
+		span {
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 140%;
+			text-align: center;
+
+			width: fit-content;
+
+			margin-bottom: 8px;
+			padding: 4px 12px;
+
+			border-radius: 8px;
+
+			color: var(--white);
+			background-color: var(--grayscale-01);
+
+			@include media-mx(991) {
+				font-weight: 500;
+				font-size: 12px;
+				line-height: 120%;
+
+				text-wrap: nowrap;
+
+				margin-bottom: 0;
+
+				color: var(--grayscale-01);
+				background-color: initial;
+			}
+		}
+		p {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 120%;
+
+			color: var(--grayscale-01);
+		}
+		b {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 120%;
+			text-align: center;
+			color: var(--grayscale-01);
+		}
+		.btn {
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 120%;
+			text-align: center;
+
+			border-radius: 40px;
+
+			padding: 16px 24px;
+
+			color: var(--white);
+			background-color: var(--grayscale-01);
+
+			@include media-mx(991) {
+				font-size: 10px;
+
+				padding: 6px 8px;
+			}
+		}
+	}
+}

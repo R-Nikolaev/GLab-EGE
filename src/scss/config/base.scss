@@ -1,0 +1,89 @@
+@import "functions";
+@import "mixins";
+
+/** Базовые анимации: */
+@import "keyframes";
+
+/** Стили для полноэкранного блока: */
+// @import "fullscreen";
+
+/*
+* (i) Стили будут применяться ко
+* всем классам содержащим *__container
+* Например header__container, main__container и т.д.
+*/
+[class*="__container"] {
+	margin-inline: auto;
+	max-inline-size: rem($max-width-container);
+	padding-inline: rem($main-offset);
+}
+
+// Стили отзывчивых картинок (IBG) ============================================
+.ibg {
+	position: relative;
+
+	img {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		object-fit: cover;
+		block-size: 100%;
+		inline-size: 100%;
+	}
+
+	&_contain {
+		img {
+			object-fit: contain;
+		}
+	}
+}
+
+// Оболочка ===================================================================
+.wrapper {
+	display: flex;
+	min-block-size: 100%;
+
+	/** Поменять на clip - если используется в проекте position: sticky */
+	overflow: clip;
+	flex-direction: column;
+
+	.menu-open & {
+		position: relative;
+		&::before {
+			content: "";
+
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 50;
+
+			width: 100%;
+			height: 100%;
+
+			backdrop-filter: blur(4px);
+			background: rgba(31, 34, 46, 0.5);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+.page {
+	position: relative;
+	flex: 1 1 auto;
+
+	[data-observ] {
+		pointer-events: none;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		block-size: rem(2);
+		inline-size: 100%;
+		background: transparent;
+	}
+
+	&_start {
+		padding-block-start: rem($header-height);
+	}
+}

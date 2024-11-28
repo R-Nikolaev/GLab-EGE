@@ -1,0 +1,124 @@
+.hot-offer {
+	margin-top: 122px;
+	@include media-mx(991) {
+		margin-top: 100px;
+	}
+	.hot-offer__container {
+		padding: 0 126px;
+
+		@include media-mx(991) {
+			padding: 0 16px;
+		}
+	}
+	.item {
+		border-radius: 32px;
+
+		padding: 54px 40px;
+
+		box-shadow:
+			0 0 1px 0 rgba(19, 23, 35, 0.04),
+			0 0 2px 0 rgba(19, 23, 35, 0.06),
+			0 3px 6px 0 rgba(19, 23, 35, 0.04);
+		background-color: var(--primary-01);
+		color: var(--white);
+
+		@include media-mx(1399) {
+			padding: 16px;
+		}
+		h2 {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 36px;
+			line-height: 120%;
+
+			margin-bottom: 26px;
+			@include media-mn(1900) {
+				font-size: 40px;
+			}
+			@include media-mx(991) {
+				font-size: 20px;
+
+				margin-bottom: 32px;
+			}
+		}
+		span {
+			position: absolute;
+			left: -30px;
+			top: 50%;
+			transform: translateY(-50%) rotate(-18deg);
+			z-index: 1;
+
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 120%;
+			text-align: center;
+			text-wrap: nowrap;
+
+			padding: 12px 24px;
+
+			border-radius: 16px;
+
+			background-color: #fc3;
+			color: var(--grayscale-01);
+
+			@include media-mn(1900) {
+				width: 314px;
+				height: 53px;
+
+				font-size: 24px;
+			}
+			@include media-mx(991) {
+				font-size: 18px;
+			}
+			@include media-mx(1399) {
+				position: relative;
+				left: auto;
+				top: auto;
+
+				display: flex;
+
+				width: fit-content;
+				justify-content: center;
+				align-items: center;
+
+				margin: 70px 0 40px;
+			}
+		}
+		p {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 120%;
+			@include media-mn(1900) {
+				font-size: 24px;
+			}
+			@include media-mx(991) {
+				font-size: 18px;
+			}
+		}
+		b {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 48px;
+			line-height: 120%;
+			letter-spacing: 0.02em;
+			text-align: center;
+
+			@include media-mn(1900) {
+				font-size: 52px;
+			}
+			@include media-mx(991) {
+				font-size: 40px;
+			}
+			@include media-mx(1399) {
+				position: relative;
+			}
+		}
+	}
+}

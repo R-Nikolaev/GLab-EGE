@@ -1,0 +1,33 @@
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="feedback-form">
+				<div class="row">
+					<div class="col-12">
+						<h2>Откройте новые возможности с GeniumLab</h2>
+					</div>
+					<div class="col-12">
+						<p>Наши менеджеры помогут выбрать направление, расскажут о форматах и программах обучения</p>
+					</div>
+				</div>
+				<form action="/submit" method="post">
+					<div class="row">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Имя" required>
+						<input type="tel" class="form-control" id="phone" name="phone" placeholder="Телефон" required>
+						<input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+						<div class="checkbox-group d-flex align-items-center">
+							<input type="checkbox" id="accept-terms" name="accept-terms" required>
+							<label for="accept-terms">
+								<span>Принимаю условия <a href="#">оферты</a> и согласен на
+									<a href="#">обработку персональных данных</a></span>
+							</label>
+						</div>
+						<button class="btn" type="submit">
+							<p>Оставить заявку</p>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

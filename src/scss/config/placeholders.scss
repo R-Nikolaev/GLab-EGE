@@ -1,0 +1,100 @@
+/**
+	Шаблоны (заготовки)
+	@extend %имя шаблона;
+*/
+
+// Счетчик для списка
+%list-counter {
+	counter-reset: item;
+	list-style-type: none;
+
+	li {
+		position: relative;
+
+		&::before {
+			content: counter(item);
+			counter-increment: item;
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline-start: 0;
+		}
+	}
+}
+
+// Адаптивное видео
+%responsive-video {
+	position: relative;
+	block-size: 0;
+	padding-block-end: 56.25%;
+	overflow: hidden;
+
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: 100%;
+		block-size: 100%;
+	}
+}
+
+// Видео в качестве фона
+%video-background {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		z-index: -100;
+		block-size: auto;
+		min-block-size: 100%;
+		inline-size: auto;
+		min-inline-size: 100%;
+		background-size: cover;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}
+
+// Серый фильтр
+%gray-filter {
+	filter: grayscale(1);
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}
+
+// Отменить выделение
+%no-select {
+	user-select: none;
+}
+
+// Зеркальное отображение
+%mirror {
+	transform: scale(-1, 1);
+}
+
+// Плавный скролл
+%smooth-scroll {
+	-webkit-overflow-scrolling: touch;
+}
+
+// Скрыть скролл
+%hide-scroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+%flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

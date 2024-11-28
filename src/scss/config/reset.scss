@@ -1,0 +1,142 @@
+@import "mixins";
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html {
+	scroll-behavior: smooth;
+	transition: opacity 0.8s ease-in-out;
+
+	&.lock {
+		touch-action: none;
+		overflow: hidden;
+
+		// [data-lp] {
+		// 	padding-inline-end: var(--bh-scrollbar-width, #{rem(16)});
+		// }
+
+		// .wrapper {
+		// 	margin-inline-end: var(--bh-scrollbar-width, #{rem(16)});
+		// }
+	}
+}
+
+html,
+body {
+	inline-size: 100%;
+	block-size: 100%;
+	min-inline-size: $min-width + px;
+}
+
+body {
+	overscroll-behavior: none;
+	line-height: var(--bs-line-height);
+	text-rendering: optimizelegibility;
+	text-size-adjust: 100%;
+	font-family: var(--bs-font-family);
+	font-size: var(--bs-font-size);
+	font-weight: var(--bs-font-weight);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+input[type="number"] {
+	appearance: textfield;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
+}
+
+button {
+	cursor: pointer;
+	user-select: none;
+	background-color: transparent;
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+a {
+	user-select: none;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+
+	&:visited {
+		text-decoration: none;
+	}
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	width: 100%;
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+	margin: 0;
+}
+
+p{
+	margin: 0;
+}
+
+sup {
+	color: inherit;
+}

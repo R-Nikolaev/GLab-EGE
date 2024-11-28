@@ -1,0 +1,13 @@
+@import "mixins";
+
+[data-fullscreen] {
+	min-block-size: 100vb;
+
+	.touch & {
+		min-block-size: calc(var(--vb, 1vb) * 100);
+
+		@include media-mx(768) {
+			transition: block-size 0.2s ease-in-out;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+// отступы безопасности для контейнера
+$main-offset: 15;
+
+// максимальная ширина страницы
+$max-width: 1990;
+
+// минимальная ширина телефона
+$min-width: 320;
+
+// ширина контейнера из макета
+$container-width: 1710;
+
+// ширина контейнера с учетом padding слева и справа
+$max-width-container: $container-width + ($main-offset * 2);
+$header-height: 86;
+$footer-height: 100;
+
+
+@media (min-width: 1900px) {
+	.container,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container-xl,
+	.container-xxl {
+	  max-width: 1740px;
+	}
+  }

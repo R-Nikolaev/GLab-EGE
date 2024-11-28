@@ -1,0 +1,191 @@
+@import "../config/functions";
+@import "../config/mixins";
+
+.header {
+	position: relative;
+	z-index: 50;
+	inline-size: 100%;
+	transition: background-color var(--bs-transition);
+	background-color: var(--grayscale-01);
+
+	.header-is-sticky & {
+		// ..стили для липкого хедера
+		position: fixed;
+		background-color: #007aff;
+	}
+
+	// .header__container
+	&__container {
+		display: flex;
+		block-size: rem($header-height);
+		align-items: center;
+		@include media-mx(991) {
+			block-size: calc(rem($header-height) / 2);
+		}
+
+		.header-is-sticky & {
+			block-size: rem($header-height - 50);
+		}
+	}
+	.header__logo.logo {
+		max-width: 284px;
+		@include media-mx(1100) {
+			max-width: 200px;
+		}
+		@include media-mx(991) {
+			max-width: 128px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.header__menu {
+		@include media-mx(1900) {
+			justify-content: space-between;
+			width: 100%;
+		}
+		@include media-mx(991) {
+			justify-content: end;
+		}
+	}
+	.menu__list {
+		column-gap: 16px;
+		@include media-mn(1900) {
+			column-gap: 24px;
+		}
+		a:not(#bonus){
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 120%;
+			text-align: center;
+
+			padding: 10px 24px;
+
+			border-radius: 40px;
+
+			color: var(--white);
+
+			transition: all .5s ease-in-out;
+			@include media-mn(1900) {
+				font-size: 18px;
+			}
+			@include media-mx(991) {
+				font-size: 14px;
+
+				padding: 0;
+			}
+			&:hover{
+				background-color: var(--primary-04);
+			}
+			&#enter {
+				background-color: var(--primary-04);
+				font-size: 16px;
+				margin-left: 40px;
+				@include media-mx(1100) {
+					margin-left: 0;
+				}
+				@include media-mx(991) {
+					background-color: initial;
+					color: var(--primary-04);
+				}
+				@include media-mn(1900) {
+					margin-left: 185px;
+					font-size: 18px;
+				}
+			}
+			&#bonus,
+			&#shop {
+				display: block;
+			}
+			&#bonus {
+				width: 40px;
+				height: 40px;
+			}
+			&#shop {
+				width: 24px;
+				height: 24px;
+
+				@include media-mn(1900) {
+				  margin-right: 16px;
+				}
+				@include media-mx(991) {
+				  margin-right: 12px;
+				}
+			}
+		}
+		&.left {
+			@include media-mx(1900) {
+				margin: 0 auto;
+			}
+		}
+		&.right {
+			column-gap: 14px;
+			@include media-mn(1900) {
+				column-gap: 16px;
+			}
+			@include media-mx(991) {
+				column-gap: 8px;
+			}
+		}
+	}
+}
+
+// Burger
+
+.icon-menu {
+	display: none;
+
+	@include media-mx(991) {
+		display: block;
+		position: relative;
+		width: rem(24);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 300ms ease 0ms;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			border-radius: 2px;
+			background-color: var(--white);
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: calc(50% - rem(1));
+		}
+
+		.menu-open & {
+			span {
+				width: 0;
+			}
+
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+	@include media-mx(500) {
+	  width: 2rem;
+	}
+}

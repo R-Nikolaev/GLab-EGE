@@ -1,0 +1,78 @@
+.burger__menu {
+	opacity: 0;
+	position: absolute;
+	right: -65vw;
+	top: 0;
+	z-index: 9999;
+	width: 65vw;
+	height: 100vh;
+	padding: 10px 16px;
+	border-radius: 16px 0 0 16px;
+	background-color: var(--grayscale-02);
+	color: var(--white);
+	transition: all 0.5s ease-in-out;
+
+	.header-menu {
+		img {
+			width: 24px;
+			height: 24px;
+		}
+
+		.icon-menu {
+			display: none;
+
+			@include media-mx(991) {
+				display: block;
+				position: relative;
+				width: rem(24);
+				height: rem(18);
+				cursor: pointer;
+				z-index: 5;
+
+				span,
+				&::before,
+				&::after {
+					content: "";
+					transition: all 300ms ease 0ms;
+					right: 0;
+					position: absolute;
+					width: 100%;
+					height: rem(2);
+					border-radius: 2px;
+					background-color: var(--white);
+				}
+
+				&::before {
+					top: calc(50% - rem(1));
+					transform: rotate(-45deg);
+				}
+
+				&::after {
+					bottom: calc(50% - rem(1));
+					transform: rotate(45deg);
+				}
+
+				span {
+					width: 0;
+				}
+			}
+		}
+	}
+
+	ul {
+		margin-top: 32px;
+		li {
+			font-family: var(--font-family);
+			font-weight: 500;
+			line-height: 120%;
+			font-size: 16px;
+			margin-bottom: 24px;
+		}
+	}
+
+	/* Применение стилей, когда класс menu-open добавлен */
+	.menu-open & {
+		opacity: 1;
+		right: 0;
+	}
+}

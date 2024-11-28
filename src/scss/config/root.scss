@@ -1,0 +1,47 @@
+:root {
+	// Семейство шрифта по умолчанию
+	--bs-font-family: "InterTight", sans-serif;
+	--second-family: "VelaSans", sans-serif;
+
+	// Размер шрифта по умолчанию
+	--bs-font-size: 16px;
+
+	// Жирность шрифта по умолчанию
+	--bs-font-weight: 400;
+
+	// Базовая высота шрифта
+	--bs-line-height: 1;
+
+	// Цвет шрифта по умолчанию
+	--bs-font-color: #222;
+	--bs-transition: 0.3s ease-in-out;
+	--bs-radius: 10px;
+	--primary-color: #131313;
+	--primary-hover-color: #2d2d2d;
+	--secondary-color: #ff4040;
+	--white-color: #fff;
+	--black-color: #131313;
+	--bs-shadow: 0px 2px 3px #{rgba(#000, 10%)}, 0px 8px 3px #{rgba(#000, 10%)};
+	--hover-shadow: 0 0 5px 0 #{rgba(#000, 10%)}, 0 0 10px 0 #{rgba(#000, 10%)}, 0 0 15px 0 #{rgba(#000, 10%)};
+
+	--white: #fff;
+	--grayscale-01: #1f222e;
+	--grayscale-02: #353a4e;
+	--grayscale-03: #606a8f;
+	--grayscale-04: #7e86a8;
+	--grayscale-05: #9ea4be;
+	--grayscale-06: #bec3d3;
+	--grayscale-07: #f2f3f6;
+	--grayscale-08: #e3e5ec;
+	--primary-01: #0064f4;
+	--primary-02: #72a0e3;
+	--primary-03: #aee4f3;
+	--primary-04: #9789d2;
+	--primary-05: #5fdc8a;
+	--primary-06: #ffbc5b;
+	--primary-07: #858585;
+	--primary-08: #5a896e;
+	--primary-09: #a5c2ed;
+	--primary-10: #6c4fe1;
+	--primary-11: #ffda6b;
+}

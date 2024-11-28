@@ -1,0 +1,35 @@
+@import "../config/mixins";
+
+.tabs {
+	display: flex;
+	gap: rem(10);
+	flex-direction: column;
+
+	// .tabs__nav
+	&__nav {
+		display: flex;
+		gap: rem(10);
+		align-items: center;
+	}
+
+	// .tabs__trigger
+	&__trigger {
+		padding: rem(10);
+		transition: 0.2s ease-in-out;
+
+		&.active {
+			color: #fff;
+			background-color: #ff4040;
+		}
+	}
+
+	// .tabs__panel
+	&__panel {
+		display: none;
+		animation: fade-up-big 0.4s forwards;
+
+		&.active {
+			display: block;
+		}
+	}
+}
